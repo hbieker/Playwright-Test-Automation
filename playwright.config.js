@@ -13,7 +13,7 @@ const { devices } = require('@playwright/test');
  * @type {import('@playwright/test').PlaywrightTestConfig}
  */
 const config = {
-  testDir: './tests',
+  testDir: './test_css',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -33,33 +33,34 @@ const config = {
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-      browserName: 'firefox',
-      headless : true
+      browserName: 'chromium'
+      //browserName: 'firefox'
+      //browserName: 'webkit'
 
   },
 
   /* Configure projects for major browsers */
-  projects: [
-    {
-      name: 'chromium',
-      use: {
-        ...devices['Desktop Chrome'],
-      },
-    },
+  //projects: [
+  //  {
+  //    name: 'chromium',
+  //    use: {
+  //      ...devices['Desktop Chrome'],
+  //    },
+  //  },
 
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-      },
-    },
+  //  {
+  //    name: 'firefox',
+  //    use: {
+  //      ...devices['Desktop Firefox'],
+  //    },
+  //  },
 
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-      },
-    },
+  // {
+  //    name: 'webkit',
+  //    use: {
+  //      ...devices['Desktop Safari'],
+  //    },
+  //  },
 
     /* Test against mobile viewports. */
     // {
@@ -88,7 +89,7 @@ const config = {
     //     channel: 'chrome',
     //   },
     // },
-  ],
+  //],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
   // outputDir: 'test-results/',

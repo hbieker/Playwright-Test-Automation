@@ -9,7 +9,7 @@ const {test, expect} = require('@playwright/test');
 //npx playwright test tests/test_name.js - command runs a specific test file
 
 //test.only runs only this test in the file. Helpful if you are developing test scripts
-test.only('test_case_1', async ({browser})=>
+test('test_case_1', async ({browser})=>
 {
     //launch fresh instance with newContext method
     const context = await browser.newContext();
@@ -18,6 +18,10 @@ test.only('test_case_1', async ({browser})=>
     console.log(await page.title());
     //Assertions are built in unlike Selenium or Cypress, which require external test frameworks
     await expect(page).toHaveTitle("National Weather Service");
+    //Supports css and xpath locators, but css is preferred
+    //Use the Selectorshub chrome extension or Chropath
+    //[name="username"]
+    await page.locator()
 });
 
 test('test_case_2', async ({browser, page})=>
